@@ -1,0 +1,23 @@
+FRONTEND
+
+1. install concurrently, react-redux, axios, react-dropzone, react-hook-form, 
+  react-hot-toast, react-icons, react-router-dom
+  npm install --save-dev concurrently
+  npm install --save react-redux axios react-dropzone react-hook-form react-hot-toast react-icons react-router-dom
+2. add/edit the scripts object in the package.json file as below
+"server": "cd server && npm run dev",
+"dev": "concurrently -n \"client,server\" -c \"bgBlue,bgYellow\" \"npm start\" \"npm run server\""
+
+BACKEND
+
+1. npm init -y
+2. create folders config, controllers, middlewares, models, routes, utils
+3. create files .env, .gitignore, index.js
+4. install nodemon, dotenv, express, mongoose, cookie-parser, jsonwebtoken, 
+    nodemailer, bcrypt, cloudinary, cors, express-fileupload
+  npm install --save-dev nodemon dotenv
+  npm install --save express mongoose cookie-parser jsonwebtoken nodemailer bcrypt cloudinary cors express-fileupload
+5. change text in the scripts object of package.json ===> 
+  FROM "test": "echo \"Error: no test specified\" && exit 1"
+  TO "start": "node index.js", "dev": "nodemon index.js"
+6. 
