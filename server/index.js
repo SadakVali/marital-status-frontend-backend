@@ -4,12 +4,10 @@ const express = require("express");
 const cookieParser = require("cookie-parser");
 const expressFileupload = require("express-fileupload");
 
-// // importing the routes
-// const contactUsRoutes = require("./routes/contact");
-// const venueRoutes = require("./routes/venue");
-// const dashboardRoutes = require("./routes/dashboard");
-// const bookingRoutes = require("./routes/booking");
-// const authRoutes = require("./routes/auth");
+// importing the routes
+const dashboardRoutes = require("./routes/dashboard");
+const trainingRoutes = require("./routes/training");
+const userRoutes = require("./routes/user");
 
 // importing the configurations
 const dotenv = require("dotenv");
@@ -45,12 +43,10 @@ app.use(
   })
 );
 
-// // routes
-// app.use("/api/v1/auth", authRoutes);
-// app.use("/api/v1/venue", venueRoutes);
-// app.use("/api/v1/booking", bookingRoutes);
-// app.use("/api/v1/dashboard", dashboardRoutes);
-// app.use("/api/v1/reach", contactUsRoutes);
+// routes
+app.use("/api/v1/dashboard", dashboardRoutes);
+app.use("/api/v1/training", trainingRoutes);
+app.use("/api/v1/check-status", userRoutes);
 
 // define initial route
 app.get("/", (req, res) =>

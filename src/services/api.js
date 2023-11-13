@@ -12,5 +12,6 @@ export const saveNewMarriageInfo = {
 
 // USER ENDPOINT APIs
 export const fetchMarriageInfoOfPeople = {
-  FETCH_MARRIAGE_INFO_OF_PEOPLE: BACKEND_BASE_URL + "/check-status/get-info",
+  FETCH_MARRIAGE_INFO_OF_PEOPLE:
+    BACKEND_BASE_URL + "/check-status/get-marriage-info",
 };

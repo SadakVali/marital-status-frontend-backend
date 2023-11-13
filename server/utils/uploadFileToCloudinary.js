@@ -39,13 +39,3 @@ exports.uploadFilesToCloudinary = async (files, folder, height, quality) => {
     throw new Error("Failed to upload files to Cloudinary");
   }
 };
-
-exports.zipImageArrays = (imagesResponse) => {
-  const urls = imagesResponse.map((res) => res.secure_url);
-  const publicIds = imagesResponse.map((res) => res.public_id);
-  const result = [];
-  // Assuming arr1 and arr2 have the same length
-  for (let i = 0; i < urls.length; i++)
-    result.push({ url: urls[i], publicId: publicIds[i] });
-  return result;
-};
