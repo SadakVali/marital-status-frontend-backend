@@ -47,6 +47,7 @@ exports.createNewMarriageEntry = async (req, res) => {
     const newCriminalDetails = await Person.create({
       name: criminalName,
       gender: criminalGender,
+      marriageId: newMarriageDetails._id,
     });
     criminalPhotosUploadResponse = await uploadFilesToCloudinary(
       req?.files?.criminalImages,

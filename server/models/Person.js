@@ -5,6 +5,11 @@ const mongoose = require("mongoose");
 import { GENDER } from "../utils/constants";
 
 const userSchema = new mongoose.Schema({
+  marriageId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Marriage",
+    required: true,
+  },
   name: {
     type: String,
     required: true,
