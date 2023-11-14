@@ -6,10 +6,8 @@ exports.marriageInfoByPersonId = async (req, res) => {
   try {
     const { personIds } = req.personIds;
     // Find marriages where the given personId matches either husband or wife
-    const marriages = await Marriage.find({
-      $or: [{ husband: { $in: personIds } }, { wife: { $in: personIds } }],
-    })
-      .populate("husband wife")
+    const marriages = await Marriage.find({ ciminalId: { $in: personIds } })
+      .populate("ciminalId")
       .exec();
     console.log({ marriages });
     if (marriages && marriages.length > 0)

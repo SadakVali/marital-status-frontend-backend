@@ -2,15 +2,21 @@
 const mongoose = require("mongoose");
 
 const marriageSchema = new mongoose.Schema({
-  husband: {
+  ciminalId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Person",
     required: true,
   },
-  wife: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Person",
+  victimName: {
+    type: String,
     required: true,
+    trim: true,
+  },
+  victimContactNumber: {
+    type: String,
+    required: true,
+    unique: true,
+    trim: true,
   },
   marriageDate: {
     type: String,
@@ -19,7 +25,7 @@ const marriageSchema = new mongoose.Schema({
   },
   image: {
     type: String,
-    required: true,
+    // required: true,
     trim: true,
   },
 });

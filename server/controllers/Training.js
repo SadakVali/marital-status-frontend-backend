@@ -1,10 +1,10 @@
 // Importing the models
-const Marriage = require("../models/Marriage");
+const Person = require("../models/Person");
 
 // Fetch Booking History of a single Venue of specified month & Year
 exports.getFaceRecognitionDB = async (req, res) => {
   try {
-    const database = await Marriage.find({}).populate("husband wife").exec();
+    const database = await Person.find({}).exec();
     console.log({ database });
     if (database && database.length > 0)
       return res.status(404).json({

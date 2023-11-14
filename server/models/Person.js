@@ -1,27 +1,24 @@
 // import from libraries
 const mongoose = require("mongoose");
 
+// import constants
+import { GENDER } from "../utils/constants";
+
 const userSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
     trim: true,
   },
-  contactNumber: {
-    type: String,
-    required: true,
-    unique: true,
-    trim: true,
-  },
   gender: {
     type: String,
-    enum: ["Male", "Female"],
+    enum: [GENDER.FEMALE, GENDER.MALE],
     required: true,
   },
   images: [
     {
       type: String,
-      required: true,
+      // required: true,
       trim: true,
     },
   ],
