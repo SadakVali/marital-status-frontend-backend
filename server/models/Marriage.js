@@ -5,7 +5,6 @@ const marriageSchema = new mongoose.Schema({
   ciminalId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Person",
-    required: true,
   },
   victimName: {
     type: String,
@@ -15,7 +14,6 @@ const marriageSchema = new mongoose.Schema({
   victimContactNumber: {
     type: String,
     required: true,
-    unique: true,
     trim: true,
   },
   marriageDate: {

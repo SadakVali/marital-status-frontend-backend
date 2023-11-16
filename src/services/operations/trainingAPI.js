@@ -29,7 +29,7 @@ export const getFaceVerifTrainingDB = (navigate) => async (dispatch) => {
     downloadLink.href = URL.createObjectURL(blob);
     // Use the desired local file path as the suggested download filename
     // Specify the desired local file path
-    downloadLink.download = "../artifacts/myData.json";
+    downloadLink.download = "../../data/myData.json";
     // Append the link to the document
     document.body.appendChild(downloadLink);
     // Trigger a click on the link to prompt the download

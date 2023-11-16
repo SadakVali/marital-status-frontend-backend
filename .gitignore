@@ -151,3 +151,5 @@ yarn-error.log*
 
 .env
 node_modules
+finalData
+training_meta_data.csv

@@ -9,21 +9,31 @@ exports.createNewMarriageEntry = async (req, res) => {
   try {
     const {
       victimName,
-      victimContactNum,
+      victimContactNumber,
       marriageDate,
       criminalName,
       criminalGender,
     } = req.body;
 
+    // console.log({
+    //   victimName,
+    //   victimContactNumber,
+    //   marriageDate,
+    //   criminalName,
+    //   criminalGender,
+    // });
+    // console.log("criminalImages", req?.files?.criminalImages);
+    // console.log("marriage_photo", req?.files?.marriagePhoto);
+
     // Validate required fields
     if (
       !victimName ||
-      !victimContactNum ||
+      !victimContactNumber ||
       !marriageDate ||
       !criminalName ||
       !criminalGender ||
       !req?.files?.criminalImages.length ||
-      !req?.files?.marriagePhoto.length
+      !req?.files?.marriagePhoto
     )
       return res.status(400).json({
         success: true,
@@ -33,7 +43,7 @@ exports.createNewMarriageEntry = async (req, res) => {
     // Create a new marriage entry
     const newMarriageDetails = await Marriage.create({
       victimName,
-      victimContactNum,
+      victimContactNumber,
       marriageDate,
     });
     // Upload Marriage Photo to the Cloudinary
@@ -41,7 +51,6 @@ exports.createNewMarriageEntry = async (req, res) => {
       req?.files?.marriagePhoto,
       `${process.env.FOLDER_NAME}/${newMarriageDetails._id}`
     );
-    newMarriageDetails.image = marriagePhotoResponse.secure_url;
 
     // Create a new person entry
     const newCriminalDetails = await Person.create({
@@ -56,15 +65,18 @@ exports.createNewMarriageEntry = async (req, res) => {
     newCriminalDetails.images = criminalPhotosUploadResponse.map(
       (res) => res.secure_url
     );
-    newCriminalDetails.save();
+    await newCriminalDetails.save();
+    newMarriageDetails.image = marriagePhotoResponse.map(
+      (res) => res.secure_url
+    )[0];
     newMarriageDetails.ciminalId = newCriminalDetails._id;
-    newMarriageDetails.save();
+    await newMarriageDetails.save();
 
     // Return new Function Hall and success response
     return res.status(201).json({
       success: true,
       message: "New Marriage Details Entry Created Successfully",
-      data: { newMarriageDetails, newHusbandDetails, newWifeDetails },
+      data: newMarriageDetails,
     });
   } catch (error) {
     console.error(error);

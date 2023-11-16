@@ -6,7 +6,7 @@ exports.getFaceRecognitionDB = async (req, res) => {
   try {
     const database = await Person.find({}, "marriageId images").exec();
     console.log({ database });
-    if (database && database.length > 0)
+    if (!database)
       return res.status(404).json({
         success: false,
         message: "No Database Available",

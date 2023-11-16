@@ -10,7 +10,7 @@ exports.marriageInfoByPersonId = async (req, res) => {
       .populate("ciminalId")
       .exec();
     console.log({ marriages });
-    if (marriages && marriages.length > 0)
+    if (!marriages)
       return res.status(404).json({
         success: false,
         message: "No related Data Available",

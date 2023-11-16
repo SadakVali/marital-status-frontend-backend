@@ -2,7 +2,7 @@
 const mongoose = require("mongoose");
 
 // import constants
-import { GENDER } from "../utils/constants";
+const { GENDER } = require("../utils/constants");
 
 const userSchema = new mongoose.Schema({
   marriageId: {
