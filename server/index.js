@@ -46,7 +46,7 @@ app.use(
 // routes
 app.use("/api/v1/dashboard", dashboardRoutes);
 app.use("/api/v1/training", trainingRoutes);
-app.use("/api/v1/check-status", userRoutes);
+app.use("/api/v1/check-marital-status", userRoutes);
 
 // define initial route
 app.get("/", (req, res) =>
