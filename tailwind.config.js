@@ -4,6 +4,7 @@ module.exports = {
   // content: ["*"],
   theme: {
     fontFamily: {
+      caveat: ["Caveat"],
       primary: [
         "Inter",
         "-apple-system",
