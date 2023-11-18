@@ -15,7 +15,7 @@ export const saveNewMarriageInfo = {
 // USER ENDPOINT APIs
 export const userEndPoints = {
   FETCH_MARRIAGE_INFO_OF_PERSON_API_TWO:
-    BACKEND_BASE_URL_ONE + "/check-status/get-marriage-info",
+    BACKEND_BASE_URL_ONE + "/check-marital-status/get-marriage-info",
   FETCH_MARRIAGE_INFO_OF_PERSON_API_ONE:
-    BACKEND_BASE_URL_TWO + "/check-status/get-marriage-info",
+    BACKEND_BASE_URL_TWO + "/check-marital-status",
 };

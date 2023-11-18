@@ -5,7 +5,7 @@ export const NavbarLinks = [
   },
   {
     text: "Check Marital Status",
-    path: "/check-marital-status",
+    path: "/check-marital-status-form",
   },
   {
     text: "About Us",

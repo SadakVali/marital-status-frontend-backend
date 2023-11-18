@@ -8,8 +8,8 @@ const Marriage = require("../models/Marriage");
 exports.marriageInfoByPersonId = async (req, res) => {
   try {
     let { marriageIds } = req.body;
-    // console.log({ marriageIds });
-    marriageIds = JSON.parse(marriageIds);
+    console.log({ marriageIds });
+    // marriageIds = JSON.parse(marriageIds);
     // console.log({ marriageIds });
     // console.log(typeof marriageIds["0"]);
     // console.log(marriageIds["0"].length);

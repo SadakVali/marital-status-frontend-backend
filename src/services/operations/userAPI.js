@@ -20,9 +20,11 @@ const {
 export const checkMaritalStatusOfPerson =
   (data, navigate) => async (dispatch) => {
     const toastId = toast.loading("Loading...");
+    // console.log({ FETCH_MARRIAGE_INFO_OF_PERSON_API_ONE });
+    // console.log(data);
     dispatch(setLoading(true));
     try {
-      const firstResponse = await apiConnector(
+      let firstResponse = await apiConnector(
         "POST",
         FETCH_MARRIAGE_INFO_OF_PERSON_API_ONE,
         data,
@@ -30,6 +32,7 @@ export const checkMaritalStatusOfPerson =
           "Content-Type": "multipart/form-data",
         }
       );
+      // firstResponse = JSON.parse(firstResponse);
       console.log(
         "FETCH_MARRIAGE_INFO_OF_PERSON_API_ONE API RESPONSE......",
         firstResponse
@@ -38,10 +41,12 @@ export const checkMaritalStatusOfPerson =
         throw new Error(firstResponse?.data?.message);
       dispatch(setMatchedCriminalsMarriageIds(firstResponse?.data?.data));
 
+      console.log(firstResponse?.data?.data);
+
       const secondResponse = await apiConnector(
         "POST",
         FETCH_MARRIAGE_INFO_OF_PERSON_API_TWO,
-        { personIds: firstResponse?.data?.data }
+        { marriageIds: firstResponse?.data?.data }
       );
       console.log(
         "FETCH_MARRIAGE_INFO_OF_PERSON_API_TWO API RESPONSE......",
@@ -52,7 +57,7 @@ export const checkMaritalStatusOfPerson =
       dispatch(setMatchedCriminalsData(secondResponse?.data?.data));
 
       toast.success("Fetching Matching Person Images Successfull");
-      navigate("/");
+      navigate("/spouse-confirmation");
     } catch (error) {
       console.log("FETCH_MARRIAGE_INFO_OF_PERSON_API API ERROR......", error);
       toast.error("Checking Marital Status Failed");

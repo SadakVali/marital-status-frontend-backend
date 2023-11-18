@@ -27,7 +27,7 @@ const Navbar = () => {
                 <p
                   className={`${
                     matchRoute(link?.path) ? "font-medium" : "font-light"
-                  } text-richblack-5 text-[1.125rem] font-inter`}
+                  } text-richblack-5 text-[1.125rem] font-inter active:scale-90`}
                 >{`${link.text}`}</p>
               </Link>
             </li>
@@ -36,7 +36,7 @@ const Navbar = () => {
       </nav>
       {/* Login, Signup, Dashboard */}
       <div className="flex items-center gap-x-4 text-richblack-5">
-        <Link to="#" className="active:scale-95">
+        <Link to="/login" className="active:scale-95">
           <button
             className={`${
               matchRoute("/login") && "font-bold"
@@ -45,7 +45,7 @@ const Navbar = () => {
             <p className="text-richblack-5 font-light">LogIn</p>
           </button>
         </Link>
-        <Link to="#" className="active:scale-95">
+        <Link to="/signup" className="active:scale-95">
           <button
             className={`${
               matchRoute("/signup") && "font-bold"
