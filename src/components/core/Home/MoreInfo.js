@@ -3,13 +3,13 @@ import Hacker from "../../../assets/images/Hacker.png";
 const MoreInfo = () => {
   return (
     <div
-      className="min-h-[100vh] flex flex-col items-center justify-center 
+      className="min-h-[110vh] flex flex-col items-center justify-center 
       w-11/12 max-w-maxContent mx-auto gap-y-8"
     >
       <div className="flex justify-center items-center gap-x-8 w-full mx-auto">
         <p
-          className="font-accent text-richblack-5 text-[2.5rem] text-center 
-          leading-normal z-10 font-bold"
+          className="font-caveat text-richblack-5 text-[2.5rem] text-center 
+          leading-normal z-10"
         >
           To Know More Details Please Watch this Video
         </p>

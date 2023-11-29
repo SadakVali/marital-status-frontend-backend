@@ -2,8 +2,10 @@ import React from "react";
 
 import FirstFancyBTN from "../../common/FirstFancyBTN";
 import { ReactComponent as DownArrow } from "../../../assets/icons/DownArrow.svg";
+import { useNavigate } from "react-router-dom";
 
 const HeroSection = () => {
+  const navigate = useNavigate();
   return (
     <div className="min-h-[85vh] flex flex-col items-center gap-y-16 justify-center">
       <div className="flex justify-center items-center flex-col">
@@ -26,7 +28,10 @@ const HeroSection = () => {
       >
         Ensure Marital Status of your potential partner Before Committing
       </p>
-      <FirstFancyBTN text={"Check Status"} />
+      <FirstFancyBTN
+        text={"Check Status"}
+        onClick={() => navigate("/check-marital-status-form")}
+      />
       <DownArrow />
     </div>
   );

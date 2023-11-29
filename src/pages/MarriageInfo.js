@@ -6,14 +6,12 @@ const MarriageInfo = () => {
     (state) => state.user
   );
   const [criminal, setCriminal] = useState(null);
-  const [isVictimFemale, setVictimFemale] = useState(null);
   useEffect(() => {
     const criminal = matchedCriminalsData.filter(
       (person) => person._id === confirmedMatchMarriageId
     )[0];
     console.log(criminal);
     setCriminal(criminal);
-    setVictimFemale(criminal?.criminalId?.gender === "Female" ? true : false);
   }, [confirmedMatchMarriageId, matchedCriminalsData]);
   const capitalizeWords = (str) =>
     str.replace(/\b\w/g, (char) => char.toUpperCase());
@@ -30,7 +28,17 @@ const MarriageInfo = () => {
             className="max-w-[500px] max-h-[500px]"
             loading="lazy"
           />
-          {isVictimFemale ? (
+          {criminal?.ciminalId?.gender === "Female" ? (
+            <div>
+              <p>Husband Name : {criminal?.victimName}</p>
+              <p>
+                Wife Name :{" "}
+                {capitalizeWords(criminal?.ciminalId.name.replace("_", " "))}
+              </p>
+              <p>His Phone No : {criminal?.victimContactNumber}</p>
+              <p>Marriage Date : {criminal?.marriageDate}</p>
+            </div>
+          ) : criminal?.ciminalId?.gender === "Male" ? (
             <div>
               <p>
                 Husband Name :{" "}
@@ -41,15 +49,7 @@ const MarriageInfo = () => {
               <p>Marriage Date : {criminal?.marriageDate}</p>
             </div>
           ) : (
-            <div>
-              <p>Husband Name : {criminal?.victimName}</p>
-              <p>
-                Wife Name :{" "}
-                {capitalizeWords(criminal?.ciminalId.name.replace("_", " "))}
-              </p>
-              <p>His Phone No : {criminal?.victimContactNumber}</p>
-              <p>Marriage Date : {criminal?.marriageDate}</p>
-            </div>
+            <div></div>
           )}
         </div>
       )}

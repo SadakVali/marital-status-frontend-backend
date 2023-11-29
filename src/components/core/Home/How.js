@@ -7,7 +7,7 @@ import Fetched from "../../../assets/images/Fetched.png";
 const How = () => {
   return (
     <div
-      className="min-h-[100vh] w-full relative"
+      className="min-h-[110vh] w-full relative py-[110vh]"
       style={{
         backgroundImage: `url(${HowImage})`,
         backgroundSize: "cover",
@@ -21,13 +21,13 @@ const How = () => {
         bg-opacity-70"
       ></div>
       <div
-        className="flex min-h-[100vh] flex-col items-center gap-y-16 
+        className="flex min-h-[110vh] flex-col items-center gap-y-16 
         justify-center w-11/12 max-w-maxContent mx-auto bg-fixed"
       >
         <p
-          className="font-accent text-richblack-5 font-bold text-center 
+          className="font-caveat text-richblack-5 text-center 
           leading-normal z-10"
-          style={{ fontSize: "clamp(1rem, 9vw, 4rem)" }}
+          style={{ fontSize: "clamp(1rem, 9vw, 5rem)" }}
         >
           How we gonna solve this Problem?
         </p>
@@ -50,13 +50,13 @@ const How = () => {
         </div>
       </div>
       <div
-        className="flex min-h-[100vh] flex-col items-center gap-y-16 
+        className="flex min-h-[110vh] flex-col items-center gap-y-16 
         justify-center w-11/12 max-w-maxContent mx-auto"
       >
         <p
-          className="font-accent text-richblack-5 font-bold text-center 
+          className="font-caveat text-richblack-5 text-center 
           leading-normal z-10"
-          style={{ fontSize: "clamp(1rem, 9vw, 4rem)" }}
+          style={{ fontSize: "clamp(1rem, 9vw, 5rem)" }}
         >
           How we gonna solve this Problem?
         </p>
@@ -78,13 +78,13 @@ const How = () => {
         </div>
       </div>
       <div
-        className="flex min-h-[100vh] flex-col items-center gap-y-16 
+        className="flex min-h-[110vh] flex-col items-center gap-y-16 
         justify-center w-11/12 max-w-maxContent mx-auto z-10"
       >
         <p
-          className="font-accent text-richblack-5 font-bold text-center 
+          className="font-caveat text-richblack-5 text-center 
           leading-normal z-10"
-          style={{ fontSize: "clamp(1rem, 9vw, 4rem)" }}
+          style={{ fontSize: "clamp(1rem, 9vw, 5rem)" }}
         >
           How we gonna solve this Problem?
         </p>
@@ -109,13 +109,13 @@ const How = () => {
         </div>
       </div>
       <div
-        className="flex min-h-[100vh] flex-col items-center gap-y-16 
+        className="flex min-h-[110vh] flex-col items-center gap-y-16 
         justify-center w-11/12 max-w-maxContent mx-auto"
       >
         <p
-          className="font-accent text-richblack-5 font-bold text-center 
+          className="font-caveat text-richblack-5 text-center 
           leading-normal z-10"
-          style={{ fontSize: "clamp(1rem, 9vw, 4rem)" }}
+          style={{ fontSize: "clamp(1rem, 9vw, 5rem)" }}
         >
           How we gonna solve this Problem?
         </p>

@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 const FraudMen = () => {
   return (
     <div
-      className="min-h-[100vh] flex flex-col items-center gap-y-16 
+      className="min-h-[110vh] flex flex-col items-center gap-y-16 
       justify-center relative w-11/12 max-w-maxContent mx-auto"
     >
-      <p className="font-accent text-richblack-5 text-[2rem] leading-none text-center">
+      <p className="font-caveat text-richblack-5 text-[2.25rem] leading-none text-center">
         One Such Recent Activity Reported on Quint . Fraud by a Man on 15 well
         Educated Women
       </p>

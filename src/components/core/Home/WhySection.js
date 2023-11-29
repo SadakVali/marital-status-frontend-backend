@@ -5,7 +5,7 @@ import whyBGimage from "../../../assets/images/WhyBG.png";
 const WhySection = () => {
   return (
     <div
-      className="min-h-[100vh] w-full relative"
+      className="min-h-[110vh] w-full relative"
       style={{
         background: `url(${whyBGimage})`,
         backgroundSize: "cover",
@@ -18,14 +18,14 @@ const WhySection = () => {
         justify-center relative w-11/12 max-w-maxContent mx-auto"
       >
         <p
-          className="font-accent text-white font-bold leading-none z-10"
-          style={{ fontSize: "clamp(1rem, 9vw, 4rem)" }}
+          className="font-caveat text-white leading-none z-10"
+          style={{ fontSize: "clamp(1rem, 10vw, 4.5rem)" }}
         >
           why we started this startup?
         </p>
         <p
-          className="font-accent text-white font-bold text-center leading-none z-10"
-          style={{ fontSize: "clamp(1rem, 9vw, 4rem)" }}
+          className="font-caveat text-white text-center leading-none z-10"
+          style={{ fontSize: "clamp(1rem, 10vw, 4.5rem)" }}
         >
           we are committed to preventing fraudulent activities in matrimonial
           unions, done by men on women and women on men.

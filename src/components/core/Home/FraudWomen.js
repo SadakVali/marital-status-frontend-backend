@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 const FraudWomen = () => {
   return (
     <div
-      className="min-h-[100vh] flex flex-col items-center gap-y-16 
+      className="min-h-[110vh] flex flex-col items-center gap-y-16 
       justify-center relative w-11/12 max-w-maxContent mx-auto"
     >
-      <p className="font-accent text-richblack-5 text-[2rem] leading-none text-center">
-        One Such Recent Activity Reported on dailyo.in, Fraud by a Woman on 27
+      <p className="font-caveat text-richblack-5 text-[2.25rem] leading-none text-center">
+        Another Recent Activity Reported on dailyo.in, Fraud by a Woman on 27
         wealthy Men
       </p>
       <div className="flex flex-col gap-y-8 w-full mx-auto">
@@ -44,6 +44,16 @@ const FraudWomen = () => {
             className="font-inter text-richblack-500 text-right text-[1rem] leading-tight"
           >
             https://www.dailyo.in/news/how-kashmirs-runaway-bride-conned-27-men-40601
+          </Link>
+          <p className="font-inter text-richblack-500 text-right text-[1rem] leading-tight">
+            Link to the official youtube video
+          </p>
+          <Link
+            target="_blank"
+            to="https://www.youtube.com/watch?v=GOzKQn6qgWo&t=268s"
+            className="font-inter text-richblack-500 text-right text-[1rem] leading-tight"
+          >
+            https://www.youtube.com/watch?v=GOzKQn6qgWo&t=268s
           </Link>
         </div>
       </div>
